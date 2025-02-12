@@ -4,7 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import Footer from "@/components/shared/Footer";
+
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +27,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
-    <html lang="en"suppressContentEditableWarning >
-      <body suppressContentEditableWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-colors duration-300 `}
+    <html suppressHydrationWarning lang="en" className="dark" style={{ colorScheme: 'dark' }} 
+    >
+      <body 
+      
+        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-colors duration-300 max-w-[1200px] mx-auto`}
       >
        <ThemeProvider
             attribute="class"
@@ -38,7 +43,6 @@ export default function RootLayout({
             disableTransitionOnChange>
             <Navbar/>
             {children}
-            <Footer/>
           </ThemeProvider>
       </body>
     </html>

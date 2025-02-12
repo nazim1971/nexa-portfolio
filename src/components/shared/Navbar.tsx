@@ -6,8 +6,8 @@ const Navbar = () => {
 
   
   return (
-    <div className="mt-5">
-      <div className="flex justify-between items-center gap-5 p-5 px-7 border border-[#04071D]  max-w-[450px] w-full mx-auto   rounded-3xl dark:bg-[#3a3b42] bg-opacity-50 dark:text-white ">
+    <div className="">
+      <div className="flex bg-white justify-between items-center gap-5 p-5 px-7 border border-[#04071D]  max-w-[450px] w-full mx-auto   rounded-3xl dark:bg-[#483e58de] bg-opacity-50 dark:text-white  fixed left-0 right-0 top-5 z-[100]">
         <p>Projects</p>
         <p>Contact</p>
         <p>Resume</p>

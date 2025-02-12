@@ -12,7 +12,7 @@ const AboutMe: React.FC = () => {
         className="max-w-4xl mx-auto text-center"
       >
         {/* Title */}
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-8">
+        <h1 className="text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-8">
           LET ME <span className="text-[#CBACF9]">INTRODUCE</span> MYSELF
         </h1>
 
