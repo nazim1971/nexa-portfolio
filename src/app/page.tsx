@@ -1,9 +1,9 @@
 'use client'
 import AboutMe from '@/components/home/AboutMe';
-import Contact from '@/components/home/Contact';
 import Find from '@/components/home/FindMe';
 import Hero from '@/components/home/Hero';
 import Projects from '@/components/home/Project';
+import Resume from '@/components/home/Resume';
 import Skills from '@/components/home/Skills';
 
 const HomePage = () => {
@@ -11,11 +11,11 @@ const HomePage = () => {
   return (
     <div className="mt-5" >
     <Hero/>
-    <AboutMe/>
     <Find/>
+    <AboutMe/>
     <Skills/>
-    <Contact/>
    <Projects/>
+   <Resume/>
    </div>
   );
 };

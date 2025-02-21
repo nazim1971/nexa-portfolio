@@ -44,7 +44,7 @@ const toolsData = [
 
 const Skills = () => {
   return (
-    <div className="my-20">
+    <div className="my-20 px-4 md:px-8 lg:px-10">
       {/* Professional Skillset */}
       <div className="text-4xl text-center font-semibold my-20">
         Professional <span className="text-[#00ABF0]">Skillset</span>

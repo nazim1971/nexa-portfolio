@@ -18,13 +18,13 @@ const AboutMe: React.FC = () => {
 
         {/* Description */}
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-          Hello! I'm Nazim, a web developer passionate about creating impactful
+          Hello! I am Nazim, a web developer passionate about creating impactful
           digital experiences. My journey began in{" "}
           <span className="text-[#CBACF9]">2020</span>, learning{" "}
           <span className="text-[#CBACF9]">HTML</span>,{" "}
           <span className="text-[#CBACF9]">CSS</span>, and{" "}
           <span className="text-[#CBACF9]">JavaScript</span> through customizing
-          websites, and it's grown into a love for building accessible, inclusive
+          websites, and it is grown into a love for building accessible, inclusive
           products.
           <br />
           <br />

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 import { CardBody, CardContainer, CardItem } from '../ui/3d-card';
 
@@ -32,12 +31,12 @@ const allProjects = [
 
 const Projects = () => {
   return (
-    <div id="projects" className="text-slate-300">
+    <div id="projects" className="text-slate-300 px-4 md:px-8 lg:px-10">
       <div className="text-center my-20 space-y-3">
         <p className="text-4xl font-semibold">
           My Recent <span className="text-[#00ABF0]">Works</span>
         </p>
-        <h5>Here are a few projects I've worked on recently</h5>
+        <h5>Here are a few projects I have worked on recently</h5>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 my-20">
