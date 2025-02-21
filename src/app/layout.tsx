@@ -10,6 +10,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/authOptions";
 import Footer from "@/components/shared/Footer";
 import Providers from "@/lib";
+import { Toaster } from "@/components/ui/sonner";
 
 const roboto = Roboto({
   weight: "400",
@@ -49,6 +50,7 @@ export default async function RootLayout({
             </div>
             <Footer/>
           </ThemeProvider>
+          <Toaster/>
        </Providers>
       </body>
     </html>

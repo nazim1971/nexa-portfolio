@@ -43,7 +43,7 @@ const blogApi = baseApi.injectEndpoints({
     >({
       query: ({ id, blogData }) => ({
         url: `/blogs/${id}`,
-        method: "PUT",
+        method: "PATCH",
         body: blogData,
       }),
     }),

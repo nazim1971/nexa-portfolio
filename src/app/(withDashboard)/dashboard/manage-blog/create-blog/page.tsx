@@ -17,7 +17,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 import { uploadImage } from "@/hooks/uploadImage";
-import { useAddBlogMutation } from "@/redux/features/admin/blog/blogApi";
+import { useAddBlogMutation, useGetAllBlogQuery } from "@/redux/features/admin/blog/blogApi";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 // Blog Schema Validation with Zod
 const blogSchema = z.object({
@@ -30,6 +32,7 @@ const blogSchema = z.object({
 type TBlog = z.infer<typeof blogSchema>;
 
 const CreateBlog = () => {
+     const { refetch } = useGetAllBlogQuery({});
   const [createBlog, { isLoading }] = useAddBlogMutation();
   const router = useRouter();
   
@@ -61,8 +64,12 @@ const CreateBlog = () => {
       console.log('before', blogInfo);
       await createBlog(blogInfo).unwrap();
       form.reset();
+      refetch()
+      toast("Blog created successfully!")
       router.push('/blog');
+      
     } catch (err) {
+        toast("Failed to create blog. Try again!!")
       console.error(err);
     }
   };
@@ -114,7 +121,7 @@ const CreateBlog = () => {
             )} />
 
             <Button className="mt-4 flex items-center gap-2" type="submit" disabled={isLoading}>
-              {isLoading ? <div className="flex items-center gap-2"><span>Creating...</span></div> : 'Create Blog'}
+              {isLoading ? <div className="flex items-center gap-2"> <Loader2/> </div> : 'Create Blog'}
             </Button>
           </form>
         </Form>

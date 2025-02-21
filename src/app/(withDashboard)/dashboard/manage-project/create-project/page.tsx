@@ -18,6 +18,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 import { useAddProjectMutation } from "@/redux/features/admin/project/projectApi";
 import { uploadImage } from "@/hooks/uploadImage";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 // Project Schema Validation with Zod (make image optional)
 const projectSchema = z.object({
@@ -37,6 +39,7 @@ type TProject = z.infer<typeof projectSchema>;
 const CreateProject = () => {
   const [createProject, { isLoading }] = useAddProjectMutation();
   const router = useRouter();
+
 
   const form = useForm<TProject>({
     resolver: zodResolver(projectSchema),
@@ -69,9 +72,11 @@ const CreateProject = () => {
       console.log("before", projectInfo);
       const res = await createProject(projectInfo).unwrap();
       console.log("after", res);
+      toast("Project created successfully!")
       form.reset();
       router.push("/projects");
     } catch (err) {
+      toast("Failed to create project. Try again!")
       console.log(err);
     }
   };
@@ -206,7 +211,7 @@ const CreateProject = () => {
             >
               {isLoading ? (
                 <div className="flex items-center gap-2">
-                  <span>Creating...</span>
+                  <Loader2/>
                 </div>
               ) : (
                 "Create Project"
