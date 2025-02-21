@@ -108,13 +108,14 @@ const LoginPage = () => {
           <p className="text-center mt-6 text-sm text-gray-500">
             Or Sign Up Using
           </p>
-
+          {/* http://localhost:3000/dashboard */}
+          {/* https://nexa-portfolio-murex.vercel.app */}
           {/* Social Login Buttons */}
           <div className="flex justify-center gap-4 mt-4">
             <button
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl: "https://nexa-portfolio-murex.vercel.app/dashboard",
                 })
               }
               className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
