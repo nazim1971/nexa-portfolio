@@ -35,12 +35,14 @@ const Hero = () => {
       </h2>
 
       <div className="flex flex-col items-center justify-center my-5 space-y-4 ">
-        <div className="text-center my-8">
-          <a
-            href="https://drive.google.com/file/d/1DrNuSNodw7TRKbKq9AY_OKnqs3mlqwrE/view?usp=drive_link"
-            download="Software_developer_resume_of_Md_Nazim_Uddin.pdf" >
-            <ShinyButton className="rounded-full  ">
-              Download <span className="text-TPrimary ">Resume</span>
+      <div className="text-center my-8">
+      <a
+            href="https://drive.usercontent.google.com/u/0/uc?id=1DrNuSNodw7TRKbKq9AY_OKnqs3mlqwrE&export=download"
+            download="Software_developer_resume_of_Md_Nazim_Uddin.pdf" 
+            aria-label="Download Md. Nazim Uddin's Resume"
+          >
+            <ShinyButton className="rounded-full">
+              Download <span className="text-TPrimary">Resume</span>
             </ShinyButton>
           </a>
         </div>

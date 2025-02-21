@@ -17,7 +17,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear(); // Dynamic Year
 
     return (
-        <div className="w-full bg-gray-100 dark:bg-gray-900 py-8 ">
+        <div className="w-full mt-10 bg-gray-100 dark:bg-gray-900 py-8 ">
           <motion.div
             initial={{ opacity: 0.0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,11 @@ const Footer = () => {
             <div className="font-extralight text-base md:text-xl dark:text-neutral-200 py-4 text-center">
               Reach out to me today and lets discuss how I can help you achieve your goals.
             </div>
-            <ShinyButton className="rounded-full  ">Contact Me Now <MoveUpRightIcon/> </ShinyButton>
+            <Link href="/contact" passHref>
+          <ShinyButton className="rounded-full">
+            Contact Me Now <MoveUpRightIcon />
+          </ShinyButton>
+        </Link>
           </motion.div>
           <div className="flex flex-col md:flex-row justify-between items-center px-4 pt-4 md:px-8 lg:px-10 mt-8  border-t-[1px] border-TPrimary">
             <p className="text-sm text-gray-700 dark:text-gray-400">&copy; {currentYear} Md. Nazim Uddin. All rights reserved.</p>
