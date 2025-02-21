@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { FiX, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Link from "next/link";
-import { ModeToggle } from "../theme/ModeToggle";
 import { UserProps } from "./Navbar";
 
 type SidebarProps = {
@@ -30,7 +29,7 @@ const Sidebar = ({ isOpen, closeSidebar, session }: SidebarProps) => {
         </button>
       </div>
       <div className="flex flex-col items-start gap-5 p-5">
-        <ModeToggle />
+        
         <Link href="/projects" onClick={closeSidebar} className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400">
           Projects
         </Link>

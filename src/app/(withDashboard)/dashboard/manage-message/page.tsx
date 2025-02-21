@@ -37,7 +37,7 @@ const ManageMessagePage = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Manage Messages</h2>
+      <h2 className=" text-xl  md:text-2xl font-bold mb-4">Manage Messages</h2>
       
       {/* Table for displaying messages */}
       <Table>

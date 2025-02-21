@@ -51,7 +51,7 @@ const ManageProjectPage = () => {
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">This is Manage Project Page</h1>
+        <h1 className="text-lg  md:text-2xl font-bold">This is Manage Project Page</h1>
         <Link
           href={"/dashboard/manage-project/create-project"}
           className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition"
