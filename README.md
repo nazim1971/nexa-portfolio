@@ -1,7 +1,3 @@
-Here's your updated README for **Nexa-Portfolio**, reflecting the use of React, Next.js, TypeScript, ShadCN UI, and other relevant details:
-
----
-
 # Nexa-Portfolio
 
 ## Overview
