@@ -26,7 +26,7 @@ const ContactPage = () => {
     resolver: zodResolver(contactFormSchema),
   });
 
-  // Function to handle form submission
+  // Function to handle form submission submission
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
     console.log("Form data:", data);
