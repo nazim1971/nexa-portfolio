@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FiX, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Link from "next/link";
 import { UserProps } from "./Navbar";
+import { signOut } from "next-auth/react";
 
 type SidebarProps = {
   isOpen: boolean;
@@ -24,25 +25,42 @@ const Sidebar = ({ isOpen, closeSidebar, session }: SidebarProps) => {
       }`}
     >
       <div className="p-5">
-        <button onClick={closeSidebar} className="text-gray-500 dark:text-gray-400 hover:text-teal-500 transition">
+        <button
+          onClick={closeSidebar}
+          className="text-gray-500 dark:text-gray-400 hover:text-teal-500 transition"
+        >
           <FiX className="text-2xl" />
         </button>
       </div>
       <div className="flex flex-col items-start gap-5 p-5">
-        
-        <Link href="/projects" onClick={closeSidebar} className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400">
+        <Link
+          href="/projects"
+          onClick={closeSidebar}
+          className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400"
+        >
           Projects
         </Link>
-        <Link href="/contact" onClick={closeSidebar} className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400">
+        <Link
+          href="/contact"
+          onClick={closeSidebar}
+          className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400"
+        >
           Contact
         </Link>
-        <Link href="/resume" onClick={closeSidebar} className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400">
+        <Link
+          href="/resume"
+          onClick={closeSidebar}
+          className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400"
+        >
           Resume
         </Link>
-        <Link href="/blog" onClick={closeSidebar} className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400">
+        <Link
+          href="/blog"
+          onClick={closeSidebar}
+          className="hover:text-teal-500 transition text-gray-500 dark:text-gray-400"
+        >
           Blog
         </Link>
-
         {session?.user && (
           <>
             {/* Dashboard Toggle */}
@@ -86,6 +104,24 @@ const Sidebar = ({ isOpen, closeSidebar, session }: SidebarProps) => {
             </div>
           </>
         )}
+
+        <div className="flex items-center">
+          {session?.user ? (
+            <button
+              onClick={() => signOut()}
+              className="border border-red-500 text-red-500 px-5 py-2 rounded-full hover:bg-red-500 hover:text-white transition duration-200"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="border border-teal-500 text-teal-500 px-5 py-2 rounded-full hover:bg-teal-500 hover:text-white transition duration-200"
+            >
+              Login
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
