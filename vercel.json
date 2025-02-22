@@ -7,6 +7,14 @@
 	  {
 		"source": "/(.*)",
 		"destination": "/"
+	  },
+	  {
+		"source": "/blog/:id",
+		"destination": "/blog/[id]"
+	  },
+	  {
+		"source": "/projects/:id",
+		"destination": "/projects/[id]"
 	  }
 	]
   }
