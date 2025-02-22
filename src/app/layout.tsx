@@ -9,7 +9,6 @@ import { authOptions } from "@/utils/authOptions";
 import Footer from "@/components/shared/Footer";
 import Providers from "@/lib";
 import { Toaster } from "@/components/ui/sonner";
-import Head from "next/head"; // Import Head component
 
 const roboto = Roboto({
   weight: "400",
@@ -36,14 +35,6 @@ export default async function RootLayout({
       className="dark"
       style={{ colorScheme: "dark" }}
     >
-      <Head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="https://res.cloudinary.com/dfvgxf4dc/image/upload/v1740038077/cb5wb6idaqs4n8lzbfoc.png"
-        />
-      </Head>
       <body
         className={`${roboto.className} antialiased transition-colors duration-300 max-w-[1200px] mx-auto `}
       >
