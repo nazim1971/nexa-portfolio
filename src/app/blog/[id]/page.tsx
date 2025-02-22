@@ -47,7 +47,7 @@ const BlogDetailsPage = () => {
             )}
 
             {/* Blog Content */}
-            <div className="">
+            <div className="text-black">
               <p>{blog?.content}</p>
             </div>
           </div>
