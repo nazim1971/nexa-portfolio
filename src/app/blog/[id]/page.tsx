@@ -47,7 +47,7 @@ const BlogDetailsPage = () => {
             )}
 
             {/* Blog Content */}
-            <div className="prose dark:prose-invert">
+            <div className="">
               <p>{blog?.content}</p>
             </div>
           </div>
