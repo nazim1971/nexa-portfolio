@@ -5,7 +5,7 @@ import Image from "next/image";
 const DashboardPage = async () => {
   const session = await getServerSession(authOptions);
   return (
-    <div className="bg-slate-100 border rounded-xl ml-2">
+    <div className="bg-slate-100 text-black border rounded-xl ml-2">
       <h1 className="text-4xl text-center mt-10">Welcome To Dashboard Page</h1>
       {session?.user ? (
         <div className="flex justify-center items-center flex-col mt-10 mx-auto pb-5">
