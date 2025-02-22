@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useGetProjectByIdQuery, useUpdateProjectMutation } from "@/redux/features/admin/project/projectApi";
+import { useGetAllProjectsQuery, useGetProjectByIdQuery, useUpdateProjectMutation } from "@/redux/features/admin/project/projectApi";
 import { uploadImage } from "@/hooks/uploadImage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {  useForm } from "react-hook-form";
@@ -40,6 +40,7 @@ const UpdateProject = () => {
     useGetProjectByIdQuery(projectId || "");
   const project = projectData?.data;
   const [updateProject, { isLoading: updating }] = useUpdateProjectMutation();
+  const {refetch} = useGetAllProjectsQuery({});
 
   const form = useForm<TProject>({
     resolver: zodResolver(projectSchema),
@@ -89,6 +90,7 @@ const UpdateProject = () => {
       }).unwrap();
 
       console.log("After:", res);
+      refetch();
       router.push("/projects"); // Redirect after update
     } catch (err) {
       console.error("Error updating project:", err);

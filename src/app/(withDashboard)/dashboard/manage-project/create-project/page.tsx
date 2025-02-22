@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
-import { useAddProjectMutation } from "@/redux/features/admin/project/projectApi";
+import { useAddProjectMutation, useGetAllProjectsQuery } from "@/redux/features/admin/project/projectApi";
 import { uploadImage } from "@/hooks/uploadImage";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
@@ -37,6 +37,7 @@ const projectSchema = z.object({
 type TProject = z.infer<typeof projectSchema>;
 
 const CreateProject = () => {
+  const {refetch} = useGetAllProjectsQuery({});
   const [createProject, { isLoading }] = useAddProjectMutation();
   const router = useRouter();
 
@@ -74,6 +75,7 @@ const CreateProject = () => {
       console.log("after", res);
       toast("Project created successfully!")
       form.reset();
+      refetch()
       router.push("/projects");
     } catch (err) {
       toast("Failed to create project. Try again!")
